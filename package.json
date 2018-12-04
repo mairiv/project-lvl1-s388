@@ -1,0 +1,33 @@
+{
+  "name": "brain_game_project_lvl1",
+  "version": "0.1.1",
+  "description": "hexlet project ",
+  "main": "src/bin/brain-games.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mairiv/project-lvl1-s388.git"
+  },
+  "author": "Mairiv",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mairiv/project-lvl1-s388/issues"
+  },
+  "homepage": "https://github.com/mairiv/project-lvl1-s388#readme",
+  "files": [
+    "dist"
+  ],
+  "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
+  "prepublishOnly": "npm run build",
+  "bin": {
+    "brain-games": "dist/bin/brain-games.js"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.0",
+    "@babel/core": "^7.2.0",
+    "@babel/node": "^7.0.0",
+    "@babel/preset-env": "^7.1.6"
+  }
+}
