@@ -2,9 +2,11 @@
   "name": "brain_game_project_lvl1",
   "version": "0.1.1",
   "description": "hexlet project ",
-  "main": "src/bin/brain-games.js",
+  "keywords": ["brain-games, game"],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -19,8 +21,6 @@
   "files": [
     "dist"
   ],
-  "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
-  "prepublishOnly": "npm run build",
   "bin": {
     "brain-games": "dist/bin/brain-games.js"
   },
