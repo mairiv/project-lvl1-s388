@@ -1,5 +1,9 @@
 import readlineSync from 'readline-sync';
 
+const NUM_CORRECT_ANSWERS = 3;
+let countUserSuccesAnswer = 0;
+
+
 const welcome = () => console.log('Welcome to the Brain Games!');
 
 const sayHelloUser = () => {
@@ -8,46 +12,35 @@ const sayHelloUser = () => {
   return name;
 };
 
-const showRuleBrainEven = () => console.log('Answer "yes" if number even otherwise answer "no".');
-
-const initNum = () => {
-  const MIN_NUMBER = 1;
-  const MAX_NUMBER = 100;
-  return Math.floor(MIN_NUMBER + Math.random() * (MAX_NUMBER + 1 - MIN_NUMBER));
+const printMessageSuccess = () => console.log('Correct!');
+const printMessageError = (answer, correctAnswer, name) => {
+  console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'. \n Let's try again, ${name}!`);
 };
+const printRule = rules => console.log(rules);
+const congratsUser = name => console.log(`Congratulations, ${name}!`);
 
 
-const NUM_CORRECT_ANSWERS = 3;
-let countUserSuccesAnswer = 0;
-
-const gameIteration = (name) => {
-  const currentNum = initNum();
-  console.log(`Question: ${currentNum}`);
-
-  const answer = readlineSync.question('Your answer: ');
-  const correctAnswer = currentNum % 2 === 0 ? 'yes' : 'no';
-  const result = answer === correctAnswer;
-  const messageSussec = 'Correct!';
-  const messageError = `'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'. \n Let's try again, ${name}!`;
+const gameProcess = (gameIteration, name) => {
+  const { result, answer, correctAnswer } = gameIteration();
   if (!result) {
-    console.log(messageError);
+    printMessageError(answer, correctAnswer, name);
   } else {
-    console.log(messageSussec);
+    printMessageSuccess();
     countUserSuccesAnswer += 1;
-
     if (countUserSuccesAnswer < NUM_CORRECT_ANSWERS) {
-      gameIteration(name);
+      gameProcess(gameIteration, name);
     } else {
-      console.log(`Congratulations, ${name}!`);
+      congratsUser(name);
     }
   }
 };
 
 
-const brainEven = () => {
+const runGame = (gameObj) => {
   welcome();
-  showRuleBrainEven();
+  printRule(gameObj.rules);
   const userName = sayHelloUser();
-  gameIteration(userName);
+  gameProcess(gameObj.gameIteration, userName);
 };
-export { welcome, sayHelloUser, brainEven };
+
+export { welcome, sayHelloUser, runGame };
