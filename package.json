@@ -1,6 +1,6 @@
 {
   "name": "brain_game_project_lvl1",
-  "version": "0.1.3",
+  "version": "0.2.1",
   "description": "hexlet project ",
   "keywords": [
     "brain-games, game"
@@ -24,7 +24,8 @@
     "dist"
   ],
   "bin": {
-    "brain-games": "dist/bin/brain-games.js"
+    "brain-games": "dist/bin/brain-games.js",
+    "brain-even": "dist/bin/brain-even.js"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.0",
