@@ -1,6 +1,6 @@
 {
   "name": "brain_game_project_lvl1",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "hexlet project ",
   "keywords": [
     "brain-games, game"
@@ -30,8 +30,9 @@
     "@babel/cli": "^7.2.0",
     "@babel/core": "^7.2.0",
     "@babel/node": "^7.0.0",
-    "@babel/preset-env": "^7.1.6",
-    "readline-sync": "^1.4.9"
+    "@babel/preset-env": "^7.1.6"
   },
-  "dependencies": {}
+  "dependencies": {
+    "readline-sync": "^1.4.9"
+  }
 }
