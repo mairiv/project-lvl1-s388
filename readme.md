@@ -6,5 +6,9 @@
 
 [![Build Status](https://travis-ci.org/mairiv/project-lvl1-s388.svg?branch=master)](https://travis-ci.org/mairiv/project-lvl1-s388)
 
-# example 
+# example brain-even
 [![asciicast](https://asciinema.org/a/14.png)](https://asciinema.org/a/BhWFHSrCXG0Q4WIQmOhcU20NA)
+
+
+# example brain-calc
+[![asciicast](https://asciinema.org/a/14.png)](https://asciinema.org/a/HlPMOOtrUdaVZc0PR5sjD4Dzp)
