@@ -17,5 +17,8 @@ start_calc:
 start_gcd: 
 	npx babel-node -- src/bin/brain-gcd.js
 
+start_progression: 
+	npx babel-node -- src/bin/brain-progression.js
+
 lint: 
 	npx eslint .

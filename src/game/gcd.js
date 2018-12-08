@@ -1,4 +1,4 @@
-import { initNum } from '../utils';
+import { randomNum } from '../utils';
 import { runGame } from '..';
 
 const MIN_NUMBER = 1;
@@ -19,8 +19,8 @@ const getCorrectAnswer = (first, second) => {
 };
 
 const init = () => {
-  const numFirst = initNum(MIN_NUMBER, MAX_NUMBER);
-  const numSecond = initNum(MIN_NUMBER, MAX_NUMBER);
+  const numFirst = randomNum(MIN_NUMBER, MAX_NUMBER);
+  const numSecond = randomNum(MIN_NUMBER, MAX_NUMBER);
   const correctAnswer = getCorrectAnswer(numFirst, numSecond);
   const question = `${numFirst} ${numSecond}`;
   return { question, correctAnswer };

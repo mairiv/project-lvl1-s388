@@ -1,4 +1,4 @@
-import { initNum, randomBoolean } from '../utils';
+import { randomNum, randomBoolean } from '../utils';
 import { runGame } from '..';
 
 const MIN_NUMBER = 0;
@@ -21,8 +21,8 @@ const getExrpessionToString = (isAddition, first, second) => {
 };
 
 const init = () => {
-  const numFirst = initNum(MIN_NUMBER, MAX_NUMBER);
-  const numSecond = initNum();
+  const numFirst = randomNum(MIN_NUMBER, MAX_NUMBER);
+  const numSecond = randomNum();
   const isAddition = randomBoolean();
   const correctAnswer = getExrpession(isAddition, numFirst, numSecond);
   const question = getExrpessionToString(isAddition, numFirst, numSecond);
