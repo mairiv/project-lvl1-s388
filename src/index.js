@@ -21,29 +21,29 @@ const printQuestion = question => console.log(`Question: ${question}`);
 const getAnswer = isNumber => readlineSync[isNumber ? 'questionInt' : 'question']('Your answer: ');
 const congratsUser = name => console.log(`Congratulations, ${name}!`);
 
-const gameProcess = (Class, name) => {
-  const gameObj = new Class();
-  printQuestion(gameObj.question);
-  const answer = getAnswer(gameObj.isAnswerNumber);
-  const result = gameObj.correctAnswer === answer;
+const gameProcess = (init, isAnswerNumber, name) => {
+  const { question, correctAnswer } = init();
+  printQuestion(question);
+  const answer = getAnswer(isAnswerNumber);
+  const result = correctAnswer === answer;
   if (!result) {
-    printMessageError(answer, gameObj.correctAnswer, name);
+    printMessageError(answer, correctAnswer, name);
   } else {
     printMessageSuccess();
     countUserSuccesAnswer += 1;
     if (countUserSuccesAnswer < NUM_CORRECT_ANSWERS) {
-      gameProcess(Class, name);
+      gameProcess(init, isAnswerNumber, name);
     } else {
       congratsUser(name);
     }
   }
 };
 
-const runGame = (gameObj) => {
+const runGame = (description, init, isAnswerNumber) => {
   welcome();
-  printDescription(gameObj.description);
+  printDescription(description);
   const userName = sayHelloUser();
-  gameProcess(gameObj, userName);
+  gameProcess(init, isAnswerNumber, userName);
 };
 
 export { welcome, sayHelloUser, runGame };
