@@ -7,7 +7,7 @@ class Calc {
     this.numSecond = initNum();
     this.isAddition = randomBoolean();
     this.description = 'What is the result of the expression?';
-    this.isNumber = true;
+    this.isAnswerNumber = true;
     this.correctAnswer = this.getExrpession();
     this.question = this.getExrpessionToString();
   }
