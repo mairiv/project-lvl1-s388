@@ -12,3 +12,6 @@
 
 # example brain-calc
 [![asciicast](https://asciinema.org/a/14.png)](https://asciinema.org/a/HlPMOOtrUdaVZc0PR5sjD4Dzp)
+
+# example brain-gcd
+[![asciicast](https://asciinema.org/a/14.png)](https://asciinema.org/a/hSZ0KKTnBGnHJ6nR7TCJGJsJh)

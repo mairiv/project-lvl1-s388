@@ -14,5 +14,8 @@ start_even:
 start_calc: 
 	npx babel-node -- src/bin/brain-calc.js
 
+start_gcd: 
+	npx babel-node -- src/bin/brain-gcd.js
+
 lint: 
 	npx eslint .
