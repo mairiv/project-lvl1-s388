@@ -22,7 +22,7 @@ const getExrpessionToString = (isAddition, first, second) => {
 
 const init = () => {
   const numFirst = randomNum(MIN_NUMBER, MAX_NUMBER);
-  const numSecond = randomNum();
+  const numSecond = randomNum(MIN_NUMBER, MAX_NUMBER);
   const isAddition = randomBoolean();
   const correctAnswer = getExrpession(isAddition, numFirst, numSecond);
   const question = getExrpessionToString(isAddition, numFirst, numSecond);
