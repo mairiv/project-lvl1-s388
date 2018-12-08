@@ -1,17 +1,14 @@
-import readlineSync from 'readline-sync';
 import { initNum } from '../utils';
+import { runGame } from '..';
 
-const even = {
-  rules: 'Answer "yes" if number even otherwise answer "no".',
-  gameIteration: () => {
-    const currentNum = initNum();
-    console.log(`Question: ${currentNum}`);
-    const answer = readlineSync.question('Your answer: ');
-    const correctAnswer = currentNum % 2 === 0 ? 'yes' : 'no';
-    const result = answer === correctAnswer;
-    return { result, answer, correctAnswer };
-  },
+class Even {
+  constructor() {
+    this.description = 'Answer "yes" if number even otherwise answer "no".';
+    this.question = initNum();
+    this.correctAnswer = this.question % 2 === 0 ? 'yes' : 'no';
+    this.isAnswerNumber = false;
+  }
+}
 
-};
-
-export default even;
+const runBrainEven = () => runGame(Even);
+export default runBrainEven;

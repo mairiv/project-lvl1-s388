@@ -1,31 +1,31 @@
-import readlineSync from 'readline-sync';
 import { initNum, randomBoolean } from '../utils';
+import { runGame } from '..';
 
-const calc = {
-  rules: 'What is the result of the expression?',
-  getExrpession: (flag, a, b) => {
-    if (flag) {
-      return a + b;
+class Calc {
+  constructor() {
+    this.numFirst = initNum();
+    this.numSecond = initNum();
+    this.isAddition = randomBoolean();
+    this.description = 'What is the result of the expression?';
+    this.isNumber = true;
+    this.correctAnswer = this.getExrpession();
+    this.question = this.getExrpessionToString();
+  }
+
+  getExrpession() {
+    if (this.isAddition) {
+      return this.numFirst + this.numSecond;
     }
-    return a * b;
-  },
-  getExrpessionToString: (flag, a, b) => {
-    if (flag) {
-      return `${a} + ${b}`;
+    return this.numFirst * this.numSecond;
+  }
+
+  getExrpessionToString() {
+    if (this.isAddition) {
+      return `${this.numFirst} + ${this.numSecond}`;
     }
-    return `${a} * ${b}`;
-  },
-  gameIteration: () => {
-    const numFirst = initNum();
-    const numSecond = initNum();
-    const isAddition = randomBoolean();
-    console.log(`Question: ${calc.getExrpessionToString(isAddition, numFirst, numSecond)}`);
-    const answer = readlineSync.questionInt('Your answer: ');
-    const correctAnswer = calc.getExrpession(isAddition, numFirst, numSecond);
-    const result = answer === correctAnswer;
-    return { result, answer, correctAnswer };
-  },
+    return `${this.numFirst} * ${this.numSecond}`;
+  }
+}
 
-};
-
-export default calc;
+const runBrainCalc = () => runGame(Calc);
+export default runBrainCalc;

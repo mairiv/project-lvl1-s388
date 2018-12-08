@@ -16,31 +16,34 @@ const printMessageSuccess = () => console.log('Correct!');
 const printMessageError = (answer, correctAnswer, name) => {
   console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'. \n Let's try again, ${name}!`);
 };
-const printRule = rules => console.log(rules);
+const printDescription = description => console.log(description);
+const printQuestion = question => console.log(`Question: ${question}`);
+const getAnswer = isNumber => readlineSync[isNumber ? 'questionInt' : 'question']('Your answer: ');
 const congratsUser = name => console.log(`Congratulations, ${name}!`);
 
-
-const gameProcess = (gameIteration, name) => {
-  const { result, answer, correctAnswer } = gameIteration();
+const gameProcess = (Class, name) => {
+  const gameObj = new Class();
+  printQuestion(gameObj.question);
+  const answer = getAnswer(gameObj.isAnswerNumber);
+  const result = gameObj.correctAnswer === answer;
   if (!result) {
-    printMessageError(answer, correctAnswer, name);
+    printMessageError(answer, gameObj.correctAnswer, name);
   } else {
     printMessageSuccess();
     countUserSuccesAnswer += 1;
     if (countUserSuccesAnswer < NUM_CORRECT_ANSWERS) {
-      gameProcess(gameIteration, name);
+      gameProcess(Class, name);
     } else {
       congratsUser(name);
     }
   }
 };
 
-
 const runGame = (gameObj) => {
   welcome();
-  printRule(gameObj.rules);
+  printDescription(gameObj.description);
   const userName = sayHelloUser();
-  gameProcess(gameObj.gameIteration, userName);
+  gameProcess(gameObj, userName);
 };
 
 export { welcome, sayHelloUser, runGame };
