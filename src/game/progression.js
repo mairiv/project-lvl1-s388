@@ -23,9 +23,7 @@ const init = () => {
   const position = randomNum(0, numbersProgression.length - 1);
   const correctAnswer = String(numbersProgression[position]);
   numbersProgression[position] = '..';
-
   const question = numbersProgression.join(' ');
-
   return { question, correctAnswer };
 };
 
