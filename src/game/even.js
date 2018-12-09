@@ -1,17 +1,16 @@
 import { randomNum } from '../utils';
 import { runGame } from '..';
 
-const MIN_NUMBER = 0;
-const MAX_NUMBER = 100;
+const minNumber = 0;
+const maxNumber = 100;
 const description = 'Answer "yes" if number even otherwise answer "no".';
-const isAnswerNumber = false;
 
 const init = () => {
-  const question = randomNum(MIN_NUMBER, MAX_NUMBER);
+  const question = randomNum(minNumber, maxNumber);
   const correctAnswer = question % 2 === 0 ? 'yes' : 'no';
   return { question, correctAnswer };
 };
 
-const runBrainEven = () => runGame(description, init, isAnswerNumber);
+const runBrainEven = () => runGame(description, init);
 
 export default runBrainEven;
