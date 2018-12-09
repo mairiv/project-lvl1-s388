@@ -6,16 +6,18 @@ const maxNumber = 1009;
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const isPrimeNum = (num) => {
-  let isPrime = false;
-  let i = 2;
-  const maxChecked = Math.floor(Math.sqrt(num));
-  while ((i <= maxChecked) && (num % i !== 0)) {
-    if (i === maxChecked) {
-      isPrime = true;
-    }
-    i += 1;
+  if (num <= 1) {
+    return false;
   }
-  return isPrime;
+  let divisor = 2;
+  const maxDivisor = num < 4 ? num - 1 : Math.floor(Math.sqrt(num));
+  while (divisor <= maxDivisor) {
+    if (num % divisor === 0) {
+      return false;
+    }
+    divisor += 1;
+  }
+  return true;
 };
 
 const init = () => {
