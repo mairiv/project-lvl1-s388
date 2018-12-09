@@ -1,4 +1,4 @@
-import { randomNum, randomBoolean } from '../utils';
+import { randomNum } from '../utils';
 import { runGame } from '..';
 
 const minNumber = 0;
