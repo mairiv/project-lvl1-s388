@@ -1,4 +1,5 @@
 # project-lvl1-s388
+Консольная игра 
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/43adca0985520c4ffb3d/maintainability)](https://codeclimate.com/github/mairiv/project-lvl1-s388/maintainability)
 
@@ -18,3 +19,6 @@
 
 # example brain-progression
 [![asciicast](https://asciinema.org/a/14.png)](https://asciinema.org/a/0NXDbKPhKau80cDFKjwuQ3NLk)
+
+# example brain-prime
+[![asciicast](https://asciinema.org/a/14.png)](https://asciinema.org/a/4Ue8iER7RY5brcrhhUhffZB8I)
