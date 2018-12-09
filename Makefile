@@ -1,7 +1,6 @@
 install: 
 	npm install
 
-
 publish: 
 	npm publish
 
@@ -25,3 +24,7 @@ start_prime:
 
 lint: 
 	npx eslint .
+
+build:
+	rm -rf dist
+	npm run build

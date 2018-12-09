@@ -2,12 +2,6 @@ import readlineSync from 'readline-sync';
 
 const numCorrectAnswers = 3;
 
-const sayHelloUser = () => {
-  console.log('Welcome to the Brain Games!');
-  const name = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${name}!`);
-};
-
 const gameProcess = (init, name, round = 0) => {
   let roundCount = round;
   if (roundCount === numCorrectAnswers) {
@@ -35,4 +29,4 @@ const runGame = (description, init) => {
   console.log(isWin ? `Congratulations, ${userName}!` : `Let's try again, ${userName}!`);
 };
 
-export { sayHelloUser, runGame };
+export default runGame;
