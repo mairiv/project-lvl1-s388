@@ -1,7 +1,7 @@
 import { randomNum } from '../utils';
 import runGame from '..';
 
-const minNumber = 0;
+const minNumber = 2;
 const maxNumber = 1009;
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
